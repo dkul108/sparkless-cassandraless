@@ -28,7 +28,7 @@ public class TagCounter {
 
         Map<String, List<String>> argsMap = parseArgs(args);
         int port = getPort(argsMap);
-        String dirName = argsMap.get(DIRECTORY_PATH_CMD_KEY) == null ? "." : argsMap.get(DIRECTORY_PATH_CMD_KEY).get(0);
+        String dirName = getDirectory(argsMap);
         System.out.println(String.format("Config: port=%d, dir=%s", port, dirName));
 
 
@@ -58,6 +58,10 @@ public class TagCounter {
             serverSocket.startHandleMultipleConnectons(console);
             System.exit(0);
         }
+    }
+
+    private static String getDirectory(Map<String, List<String>> argsMap) {
+        return argsMap.get(DIRECTORY_PATH_CMD_KEY) == null ? "." : argsMap.get(DIRECTORY_PATH_CMD_KEY).get(0);
     }
 
     private static int getPort(Map<String, List<String>> argsMap) {
