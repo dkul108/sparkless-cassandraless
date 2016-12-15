@@ -7,14 +7,14 @@ mvn clean package assembly:single
 2)run (from ./target folder):
 java -jar sparkless-cassandraless-1.0-SNAPSHOT-jar-with-dependencies.jar -p 5432 -d ../
 
-3)launch client connetcion on windows, multiple connections are allowed
+3)launch client connection on windows, multiple connections are allowed
 (but perform step 2 first):
 
 cmd->telnet localhost 5432
 
 
 4) exit server process:
-return to folder from step 2) and type 'quit' (with no braces)
+return to folder from step 2) and type 'quit' (with no quots used)
 
 ======================================================
 Test  task description.
