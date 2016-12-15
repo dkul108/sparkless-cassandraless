@@ -1,9 +1,6 @@
 package org.cv.fis;
 
 
-import com.google.common.base.Joiner;
-import com.google.common.collect.Multimap;
-import com.google.common.collect.Multimaps;
 import javafx.util.Pair;
 import org.cv.fis.common.InputStreamProvider;
 import org.cv.fis.files.provider.FileRepositoryConnection;
@@ -15,11 +12,13 @@ import org.cv.fis.parser.impl.TextParser;
 import org.cv.fis.pool.TagCounterExecutor;
 
 import java.io.Console;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.CountDownLatch;
 import java.util.stream.Collectors;
 
-import static java.lang.Integer.getInteger;
 import static java.lang.Integer.parseInt;
 import static org.cv.fis.config.TagCounterConfig.*;
 
@@ -78,15 +77,12 @@ public class TagCounter {
                 }
                 options = new ArrayList<>();
                 params.put(a.substring(1), options);
-                System.out.println("substring:" + a.substring(1));
             } else if (options != null) {
                 options.add(a);
-                System.out.println("options:" + options + " value:" + a);
             } else {
                 System.err.println("Illegal parameter usage");
             }
         }
-        System.out.println();
         return params;
     }
 

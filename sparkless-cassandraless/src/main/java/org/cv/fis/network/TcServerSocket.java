@@ -38,15 +38,14 @@ public class TcServerSocket implements AutoCloseable {
     public void startHandleMultipleConnectons(Console console) throws IOException, InterruptedException {
         for (; ; ) {
 
-            String input = console == null ? null : console.readLine();
-            System.out.println("Console input:"+ input);
-            if (EXIT_COMMAND.equals(input)) {
-                break;
-            }
-
             Socket clientSocket = socket.accept();
             System.out.println("clientSocket accepted=" + clientSocket.isConnected());
             new Thread(new TcConnectionHandler(clientSocket, totals)).start();
+
+            String input = console == null ? null : console.readLine();
+            if (EXIT_COMMAND.equals(input)) {
+                break;
+            }
         }
     }
 

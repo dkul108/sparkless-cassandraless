@@ -2,7 +2,7 @@
 just a test task
 
 1)build (from root directory, with tests):
-mvn clean package assembly:single -DdescriptorId=jar-with-dependencies
+mvn clean package assembly:single
 
 2)run (from ./target folder):
 java -jar sparkless-cassandraless-1.0-SNAPSHOT-jar-with-dependencies.jar -p 5432 -d ../
