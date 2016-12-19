@@ -49,11 +49,11 @@ public class TextReader implements Iterator<String[]>, Closeable, TagCounterConf
 
 
     protected String preProcessLine(String line) {
-        if (EXCLUDED_CHARS_PATTERN != null) {
-            line = EXCLUDED_CHARS_PATTERN.matcher(line).replaceAll("");
-        }
         if (TO_LOWER_CASE) {
             line = line.toLowerCase();
+        }
+        if (EXCLUDED_CHARS_PATTERN != null) {
+            line = EXCLUDED_CHARS_PATTERN.matcher(line).replaceAll("");
         }
         return line;
     }

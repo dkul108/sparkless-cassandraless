@@ -25,7 +25,7 @@ public interface TagCounterConfig {
 
         boolean TO_LOWER_CASE = true;
 
-        String EXCLUDED_CHARS = "[<![CDATA[¢`~!@#$%^&*()_+-=[\\]\\\\;\',.¬/¦{}|:\"“”<>?\\r\\t\\n\\f]]]>]";
+        String EXCLUDED_CHARS = "[^a-z0-9 ]";
 
         Pattern EXCLUDED_CHARS_PATTERN = Pattern.compile(EXCLUDED_CHARS);
     }
